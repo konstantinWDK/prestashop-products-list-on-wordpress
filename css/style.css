@@ -1,0 +1,65 @@
+/* Contenedor principal que ajusta la grid de productos */
+.prestashop-products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Para centrar la grid dentro de su contenedor */
+}
+
+/* Estilo para cada producto individual */
+.prestashop-product {
+    flex: 1 1 calc(25% - 20px); /* 4 columnas, ajustadas a su contenedor */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Al pasar el mouse sobre un producto */
+.prestashop-product:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen del producto */
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Título del producto */
+.product-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Precio del producto */
+.product-price {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Responsive: 3 columnas para pantallas medianas */
+@media (max-width: 1024px) {
+    .prestashop-product {
+        flex: 1 1 calc(33.33% - 20px); /* 3 columnas */
+    }
+}
+
+/* Responsive: 2 columnas para pantallas pequeñas */
+@media (max-width: 768px) {
+    .prestashop-product {
+        flex: 1 1 calc(50% - 20px); /* 2 columnas */
+    }
+}
+
+/* Responsive: 1 columna para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .prestashop-product {
+        flex: 1 1 100%; /* 1 columna */
+    }
+}
+
+

@@ -112,7 +112,8 @@ function mostrar_productos_prestashop($atts) {
                 $product_price = number_format($product['price'] * 1.2, 2);
             }
 
-            $product_slug = isset($product['link_rewrite'][2]['value']) ? sanitize_text_field($product['link_rewrite'][2]['value']) : 'slug-no-disponible';
+            $product_slug = isset($product['link_rewrite'][0]['value']) ? sanitize_text_field($product['link_rewrite'][0]['value']) : 'default-slug';
+
             $image_id = isset($product['id_default_image']) ? esc_attr($product['id_default_image']) : 'default';
             $image_url = esc_url($shop_url . '/' . $image_id . '-home_default/' . $product_slug . '.jpg');
             $product_url = esc_url($shop_url . '/' . $product['id'] . '-' . $product_slug . '.html');

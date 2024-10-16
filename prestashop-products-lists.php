@@ -6,6 +6,7 @@
  * Author: Konstantin WDK
  * Author URI: https://webdesignerk.com
  * License: GPL2
+ * Text Domain: prestashop-products-lists
  */
 
 // Evitar acceso directo al archivo

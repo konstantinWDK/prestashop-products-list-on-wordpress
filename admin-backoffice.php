@@ -67,7 +67,7 @@ function prestashop_products_listings_page() {
             }
         }
     }
-
+    
     // Eliminar un listado
     if (isset($_GET['delete'])) {
         $delete_id = sanitize_text_field(wp_unslash($_GET['delete']));

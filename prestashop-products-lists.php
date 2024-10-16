@@ -45,7 +45,7 @@ function mostrar_listado_prestashop($atts) {
         }
     }
 
-    return esc_html__('Listado no encontrado.', 'text-domain');
+    return esc_html__('Listado no encontrado.', 'prestashop-products-lists');
 }
 add_shortcode('prestashop_listado', 'mostrar_listado_prestashop');
 
@@ -69,7 +69,7 @@ function mostrar_productos_prestashop($atts) {
     $order = sanitize_text_field($atts['order']);
 
     if (empty($api_key)) {
-        return esc_html__('Por favor, ingrese la clave API.', 'text-domain');
+        return esc_html__('Por favor, ingrese la clave API.', 'prestashop-products-lists');
     }
 
     // Crear la URL de la API
@@ -80,7 +80,7 @@ function mostrar_productos_prestashop($atts) {
     $response = wp_remote_get($url);
 
     if (is_wp_error($response)) {
-        return esc_html__('Error al conectar con la API de PrestaShop', 'text-domain');
+        return esc_html__('Error al conectar con la API de PrestaShop', 'prestashop-products-lists');
     }
 
     // Obtener el cuerpo de la respuesta
@@ -106,7 +106,7 @@ function mostrar_productos_prestashop($atts) {
         $output = '<div class="prestashop-products-grid">';
 
         foreach ($data['products'] as $product) {
-            $product_name = isset($product['name']) ? esc_html($product['name']) : esc_html__('Nombre no disponible', 'text-domain');
+            $product_name = isset($product['name']) ? esc_html($product['name']) : esc_html__('Nombre no disponible', 'prestashop-products-lists');
             $product_price = number_format($product['price'], 2);
             if ($currency == 'USD') {
                 $product_price = number_format($product['price'] * 1.2, 2);
@@ -132,7 +132,7 @@ function mostrar_productos_prestashop($atts) {
         $output .= '</div>';
         return $output;
     } else {
-        return esc_html__('No se encontraron productos activos en estas categorías o hubo un error en la respuesta de la API.', 'text-domain');
+        return esc_html__('No se encontraron productos activos en estas categorías o hubo un error en la respuesta de la API.', 'prestashop-products-lists');
     }
 }
 ?>

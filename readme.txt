@@ -12,7 +12,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Un plugin que permite mostrar productos de una tienda PrestaShop obteniendo productos de su API en WordPress con un layout responsive usando Flexbox. Incluye la opción de crear múltiples listados desde el backoffice.
 
-== Descripción ==
+== Descripción ===
 
 **Prestashop products lists** es una herramienta diseñada para integrarse con tu tienda PrestaShop a través de su API, permitiéndote mostrar productos directamente en tu sitio de WordPress mediante un shortcode. La interfaz del plugin es completamente configurable desde el backoffice de WordPress, donde puedes crear múltiples listados de productos con parámetros personalizados como la moneda, las categorías y el orden de los productos.
 

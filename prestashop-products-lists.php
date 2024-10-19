@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: PrestaShop Products Lists - Listados Personalizados
+ * Plugin Name: Products Lists from PrestaShop – Listados Personalizados
  * Description: Muestra productos de PrestaShop en tu sitio de WordPress usando su API con un layout responsive usando Flexbox. Ahora con la opción de crear múltiples listados desde el backoffice.
  * Version: 2.2
  * Author: Konstantin WDK
  * Author URI: https://webdesignerk.com
  * License: GPL2
- * Text Domain: prestashop-products-lists
+ * Text Domain: products-lists-from-prestashop
  */
 
 // Evitar acceso directo al archivo
@@ -46,7 +46,7 @@ function mostrar_listado_prestashop($atts) {
         }
     }
 
-    return esc_html__('Listado no encontrado.', 'prestashop-products-lists');
+    return esc_html__('Listado no encontrado.', 'products-lists-from-prestashop');
 }
 add_shortcode('prestashop_listado', 'mostrar_listado_prestashop');
 
@@ -70,7 +70,7 @@ function mostrar_productos_prestashop($atts) {
     $order = sanitize_text_field($atts['order']);
 
     if (empty($api_key)) {
-        return esc_html__('Por favor, ingrese la clave API.', 'prestashop-products-lists');
+        return esc_html__('Por favor, ingrese la clave API.', 'products-lists-from-prestashop');
     }
 
     // Crear la URL de la API
@@ -81,7 +81,7 @@ function mostrar_productos_prestashop($atts) {
     $response = wp_remote_get($url);
 
     if (is_wp_error($response)) {
-        return esc_html__('Error al conectar con la API de PrestaShop', 'prestashop-products-lists');
+        return esc_html__('Error al conectar con la API de PrestaShop', 'products-lists-from-prestashop');
     }
 
     // Obtener el cuerpo de la respuesta
@@ -107,7 +107,7 @@ function mostrar_productos_prestashop($atts) {
         $output = '<div class="prestashop-products-grid">';
 
         foreach ($data['products'] as $product) {
-            $product_name = isset($product['name']) ? esc_html($product['name']) : esc_html__('Nombre no disponible', 'prestashop-products-lists');
+            $product_name = isset($product['name']) ? esc_html($product['name']) : esc_html__('Nombre no disponible', 'products-lists-from-prestashop');
             $product_price = number_format($product['price'], 2);
             if ($currency == 'USD') {
                 $product_price = number_format($product['price'] * 1.2, 2);
@@ -133,7 +133,7 @@ function mostrar_productos_prestashop($atts) {
         $output .= '</div>';
         return $output;
     } else {
-        return esc_html__('No se encontraron productos activos en estas categorías o hubo un error en la respuesta de la API.', 'prestashop-products-lists');
+        return esc_html__('No se encontraron productos activos en estas categorías o hubo un error en la respuesta de la API.', 'products-lists-from-prestashop');
     }
 }
 ?>

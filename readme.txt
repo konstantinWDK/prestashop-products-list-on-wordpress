@@ -27,7 +27,7 @@ Un plugin que permite mostrar productos de una tienda PrestaShop obteniendo prod
 
 == Instalación ==
 
-1. Sube los archivos del plugin al directorio `/wp-content/plugins/prestashop-products-lists` o instálalo directamente desde el directorio de plugins de WordPress.
+1. Sube los archivos del plugin al directorio `/wp-content/plugins/products-lists-from-prestashop` o instálalo directamente desde el directorio de plugins de WordPress.
 2. Activa el plugin desde el menú 'Plugins' de WordPress.
 3. Dirígete al menú "Listados" en el panel de administración de WordPress para configurar y gestionar los listados de productos.
 4. Usa el shortcode `[prestashop_listado id="ID_DEL_LISTADO"]` para mostrar productos en cualquier página o post.
